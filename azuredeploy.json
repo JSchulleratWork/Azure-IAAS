@@ -189,13 +189,14 @@
         "StorageAccountType": {
             "type": "string",
             "allowedValues": [
-                "Standard_GRS",
+                "Standard_LRS",
+		"Standard_GRS",
                 "Standard_RAGRS"
             ],
             "metadata": {
-                "description": "The type of Geo-Redundant storage account used for the VMs in the deployment."
+                "description": "The type of Local or Geo-Redundant storage account used for the VMs in the deployment."
             },
-            "defaultValue": "Standard_GRS"
+            "defaultValue": "Standard_LRS"
         },
       "templatesBaseUrl": {
         "type": "string",
