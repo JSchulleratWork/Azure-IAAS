@@ -23,7 +23,7 @@
         },
         "encryptionEnabled": {
             "type": "bool",
-            "defaultValue": true,
+            "defaultValue": false,
             "metadata": {
                 "description": "Boolean toggle for setting VM encryption as a part of the deployment."
             }
