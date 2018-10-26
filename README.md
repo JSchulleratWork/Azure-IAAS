@@ -4,7 +4,7 @@ For more information about this solution, see [Azure Security and Compliance Blu
 
 ## Deploy the solution
 
-This Azure Blueprint solution is comprised of JSON configuration files and PowerShell scripts that are handled by Azure Resource Manager's API service to deploy resources within Azure. ***Note: This solution deploys to Azure Government.***
+This Azure Blueprint solution is comprised of JSON configuration files and PowerShell scripts that are handled by Azure Resource Manager's API service to deploy resources within Azure. 
 
 ### Quickstart
 1. Clone or download this repository to run from a local workstation.
@@ -13,7 +13,7 @@ This Azure Blueprint solution is comprised of JSON configuration files and Power
 
 3. Click the button below, sign into the Azure portal, enter the required ARM template parameters, and click **Purchase**. [Read more about deployment.](#deployment)
 
-	[![Deploy to Azure](http://azuredeploy.net/AzureGov.png)](https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Ffedramp-iaas-webapp%2Fmaster%2Fazuredeploy.json)
+	[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Felijahneo%2FAzure-IAAS%2Fmaster%2Fazuredeploy.json)
 	
 4. When the deployment completes, there is a post-deployment script in the repository for registering and initiating initial backup. This step can be completed before or after configuring the VM environment for the application to be deployed into the environment.
 
@@ -47,7 +47,7 @@ The pre-deployment PowerShell script will verify that the necessary Azure PowerS
 * **Admin Username**: Administrator username for use as the administrator account on deployed virtual machines.
 * **Admin Password**: Administrator password for use with the administrator account on deployed virtual machines. Passwords must be at least 14 characters and contain one each of the following: lower case character, upper case character, number, and special character.
 * **Domain Name**: Domain name for the self-signed SSL certificate. Domain names utilized for this blueprint must adhere to RFC 1123 and NetBIOS (e.g., `contoso.local`).
-* **Azure Government Subscription ID**: Azure Government subscription ID details can be found in the Azure Government portal. Navigate to https://portal.azure.us and sign in. Expand the service menu on the left side of the portal, select "more services," and begin typing "subscription" in the filter box. Click **Subscriptions** to open the subscriptions blade. Note the subscription ID, which has the GUID format: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.
+* **Azure Government Subscription ID**: Azure Government subscription ID details can be found in the Azure Government portal. Navigate to https://portal.azure.com and sign in. Expand the service menu on the left side of the portal, select "more services," and begin typing "subscription" in the filter box. Click **Subscriptions** to open the subscriptions blade. Note the subscription ID, which has the GUID format: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.
 * **Resource Group Name**: The resource group name for use with this deployment; must be a string of 1-90 alphanumeric characters (such as 0-9, a-z, A-Z), periods, underscores, hyphens, and parenthesis and it cannot end in a period (e.g., `blueprint-rg`). 
 	* **Key Vault Name**: The Key Vault name will be automatically generated from the **Resource Group Name** parameter, as the deployment cannot use an existing Key Vault resource for this blueprint (e.g., `blueprint-rg-KV`). 
 
@@ -65,12 +65,12 @@ Note the resource group name, Key Vault name, and domain name used as these will
 
 During this phase, an Azure Resource Manager (ARM) template will deploy Azure resources to the selected subscription and perform configuration activities.
 
-After clicking the **Deploy to Azure Gov** button, the Azure portal will open and prompt users for the following settings:
+After clicking the **Deploy to Azure** button, the Azure portal will open and prompt users for the following settings:
 
 **Basics**
 * **Subscription**: Choose the same subscription used during the pre-deployment phase.
 * **Resource group**: Select **Use existing** and choose the resource group created during pre-deployment.
-* **Location**: Verify **USGovVirginia** is selected by default.  
+* **Location**: Verify **Southeast Asia** is selected by default.  
 	***Note: This solution must be deployed in the USGovVirginia region due to service availability.***
 
 **Settings**
@@ -83,7 +83,7 @@ All other settings contain default values that may be optionally adjusted by use
 
 1. Click the button below.
 
-	[![Deploy to Azure](http://azuredeploy.net/AzureGov.png)](https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Ffedramp-iaas-webapp%2Fmaster%2Fazuredeploy.json)
+	[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Felijahneo%2FAzure-IAAS%2Fmaster%2Fazuredeploy.json)
 2. Enter the settings described above.
 3. Review the terms and conditions and click **I agree to the terms and conditions stated above**.
 4. Click **Purchase**.
