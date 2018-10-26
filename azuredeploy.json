@@ -344,7 +344,7 @@
             "gatewaySkuName": "WAF_Medium",
             "omsWorkspace": "[substring(concat(uniqueString(resourceGroup().id), 'ws'), 5)]",
             "automationAccount": "[substring(concat(uniqueString(resourceGroup().id), 'aa'), 5)]",
-            "recoveryServicesVault": "AZ-RCV-01",
+            "recoveryServicesVault": "[concat('AZ-RCV-01', uniqueString(resourceGroup().id))]",
             "automationSchedule": "VM-Patching-Schedule",
             "virtualNetworkNameWithSuffix": "[concat('autohav2VNET', uniqueString(resourceGroup().id))]",
             "nsgs": {
