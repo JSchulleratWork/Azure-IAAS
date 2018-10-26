@@ -19,11 +19,11 @@ This Azure Blueprint solution is comprised of JSON configuration files and Power
 
 ### Pre-deployment
 
-During pre-deployment, confirm that an Azure Government subscription and local workstation are prepared to deploy the solution. The final pre-deployment step is running a PowerShell orchestration script that verifies the setup requirements, gathers parameters and credentials, and creates resources in Azure to prepare for deployment.
+During pre-deployment, confirm that an Azure subscription and local workstation are prepared to deploy the solution. The final pre-deployment step is running a PowerShell orchestration script that verifies the setup requirements, gathers parameters and credentials, and creates resources in Azure to prepare for deployment.
 
 #### Azure subscription requirements
 
-This Azure Blueprint solution is designed to deploy to Azure Government. The solution does not currently support Azure commercial regions. For users with multi-tenant environments, the account used to deploy must be a member of the Azure Active Directory instance that is associated with the subscription where this blueprint solution will be deployed.
+This Azure Blueprint solution is cloned from original to enable deploy to Azure Cloud instead of Azure Government. The solution is edited to support Azure commercial regions. For users with multi-tenant environments, the account used to deploy must be a member of the Azure Active Directory instance that is associated with the subscription where this blueprint solution will be deployed.
 
 #### Local workstation requirements
 
@@ -47,7 +47,7 @@ The pre-deployment PowerShell script will verify that the necessary Azure PowerS
 * **Admin Username**: Administrator username for use as the administrator account on deployed virtual machines.
 * **Admin Password**: Administrator password for use with the administrator account on deployed virtual machines. Passwords must be at least 14 characters and contain one each of the following: lower case character, upper case character, number, and special character.
 * **Domain Name**: Domain name for the self-signed SSL certificate. Domain names utilized for this blueprint must adhere to RFC 1123 and NetBIOS (e.g., `contoso.local`).
-* **Azure Government Subscription ID**: Azure Government subscription ID details can be found in the Azure Government portal. Navigate to https://portal.azure.com and sign in. Expand the service menu on the left side of the portal, select "more services," and begin typing "subscription" in the filter box. Click **Subscriptions** to open the subscriptions blade. Note the subscription ID, which has the GUID format: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.
+* **Azure Subscription ID**: Azure subscription ID details can be found in the Azure portal. Navigate to https://portal.azure.com and sign in. Expand the service menu on the left side of the portal, select "more services," and begin typing "subscription" in the filter box. Click **Subscriptions** to open the subscriptions blade. Note the subscription ID, which has the GUID format: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.
 * **Resource Group Name**: The resource group name for use with this deployment; must be a string of 1-90 alphanumeric characters (such as 0-9, a-z, A-Z), periods, underscores, hyphens, and parenthesis and it cannot end in a period (e.g., `blueprint-rg`). 
 	* **Key Vault Name**: The Key Vault name will be automatically generated from the **Resource Group Name** parameter, as the deployment cannot use an existing Key Vault resource for this blueprint (e.g., `blueprint-rg-KV`). 
 
@@ -71,8 +71,7 @@ After clicking the **Deploy to Azure** button, the Azure portal will open and pr
 * **Subscription**: Choose the same subscription used during the pre-deployment phase.
 * **Resource group**: Select **Use existing** and choose the resource group created during pre-deployment.
 * **Location**: Verify **Southeast Asia** is selected by default.  
-	***Note: This solution must be deployed in the USGovVirginia region due to service availability.***
-
+	
 **Settings**
 * **Key Vault Name**: Name of the Key Vault created during pre-deployment.
 * **Key Vault Resource Group Name**: Name of the resource group created during pre-deployment.
